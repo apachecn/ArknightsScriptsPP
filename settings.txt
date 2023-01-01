@@ -1,0 +1,61 @@
+# 井号#注释说明：每一行井号#后面的部分会在读配置时被忽略
+# 所以可以用#来写注释，或者使某行配置无效
+
+# adb.exe 的路径，夜神模拟器安装路径下的bin文件夹里面有,参照以下格式，修改双引号内的就ok
+adb_path = "D:\Program Files\Nox\bin\adb.exe"
+
+# 模拟器的地址
+device_address = "127.0.0.1:62028"
+
+# 想跑的功能模块，且越先append的功能越优先运行
+to_do_list.append("go_level")          # 刷关卡，默认优先刷钱，没开的情况下刷经验,
+to_do_list.append("go_visit_friends")  # 访问好友
+to_do_list.append("go_collect_mail")   # 收邮件
+to_do_list.append("go_shop")           # 领取信用，自动买打折的商品
+to_do_list.append("go_clue")           # 处理会客室线索：上线索、足够后解锁线索、送多出2个的同种线索中一个、领新线索、。
+to_do_list.append("go_collect_quests") # 领取任务奖励
+to_do_list.append("go_infrastructure") # 基建收货，收信赖，傻瓜式换人
+to_do_list.append("go_drone")          # 使用无人机在贸易站加速订单
+to_do_list.append("go_hire_crew")      # 自动公开招募（遇到资深干员和高级资深干员则停止，由未来手动选择）
+
+# 自动跑临时关卡（活动），有配置则开启，配置空（或被#注释掉）会自动跑 ce 或 ls
+#auto_t_level.append("template_level_images\level_t_2.png")
+#auto_t_level.append("template_level_images\level_t_3.png")
+#auto_t_level.append("template_level_images\level_t_4.png")
+#auto_t_level.append("template_level_images\level_t_5.png")
+
+# 自动跑的ce关卡,需要已经能挂机
+auto_ce_level = 6
+
+# 自动跑的ls关卡,需要已经能挂机
+auto_ls_level = 6
+
+# 去刷关卡的周期，单位秒
+go_level_cycle = 10800
+
+# 去处理基建的周期，单位秒
+go_infrastructure_cycle = 21600
+
+# 去访问好友的周期，单位秒
+go_visit_friends_cycle = 21600
+
+# 去处理任务的周期，单位秒
+go_collect_quests_cycle = 7200
+
+# 去收集邮件的周期，单位秒
+go_collect_mail_cycle = 21600
+
+# 去处理采购中心的周期，单位秒
+go_shop_cycle = 21600
+
+# 去公开招募的周期，单位秒
+go_hire_crew_cycle = 10800
+
+# 去处理会客室线索的周期，单位秒
+go_clue_cycle = 21600
+
+# 使用无人机在贸易站加速订单获取的周期，单位秒
+go_drone_cycle = 7200
+
+# 没事做的时候程序sleep的时长，单位秒
+recheck_time_when_no_work_to_do = 1800
